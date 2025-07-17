@@ -3,7 +3,7 @@ from typing import List
 
 
 class Message(BaseModel):
-    rols: str
+    role: str
     content: str
 
 

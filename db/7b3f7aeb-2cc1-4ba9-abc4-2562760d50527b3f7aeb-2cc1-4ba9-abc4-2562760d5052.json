@@ -78,5 +78,13 @@
     {
         "role": "assistant",
         "content": "Salman Khan is a well-known Indian actor, film producer, singer, and television personality who primarily works in the Hindi film industry, commonly known as Bollywood. He is one of the most popular and influential actors in India, with a massive fan following both domestically and internationally. Salman Khan has appeared in numerous successful films and is known for his versatile acting skills, charismatic screen presence, and unique style. In addition to his acting career, Salman Khan is also involved in various philanthropic activities and charitable initiatives through his foundation, Being Human."
+    },
+    {
+        "role": "user",
+        "content": "can you give me code in python language, add two value."
+    },
+    {
+        "role": "assistant",
+        "content": "Sure! Here is a simple Python code snippet that adds two values and prints the result:\n\n```python\n# Assign values to variables\na = 10\nb = 20\n\n# Add the values\nresult = a + b\n\n# Print the result\nprint(\"The sum of\", a, \"and\", b, \"is:\", result)\n```\n\nWhen you run this code, it will output:\n```\nThe sum of 10 and 20 is: 30\n``` \n\nThis code assigns the values 10 and 20 to variables `a` and `b`, adds them together, and then prints the result."
     }
 ]

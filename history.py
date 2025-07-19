@@ -3,7 +3,7 @@ import json
 from typing import List, Dict
 from models import Message
 
-DATA_DIR = "db"
+DATA_DIR = "db/history"
 
 os.makedirs(DATA_DIR, exist_ok=True)
 

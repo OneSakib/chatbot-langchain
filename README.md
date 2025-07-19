@@ -1,1 +1,15 @@
-# Project Title\nGitHub Project Summary\n\n## Description\nThis project is a summary of the key points from a GitHub repository.\n\n## Setup Instructions\nTo set up this project, you can simply clone the repository to your local machine.\n\n## How to Run\nAfter cloning the repository, you can view the content and use it for reference purposes.\n\n## Example Usage\nYou can use this project as a template to generate well-structured README files from code summaries.\n\n## Technologies Used\n- GitHub\n- Markdown\n\nFeel free to explore the project and adapt it to your needs!
+# Project Title
+GitHub Project Summary
+## Description
+This project is a summary of the key points from a GitHub repository.
+
+## Setup Instructions
+To set up this project, you can simply clone the repository to your local machine.
+
+## How to RunAfter cloning the repository, you can view the content and use it for reference purposes.
+
+## Example Usage\nYou can use this project as a template to generate well-structured README files from code summaries.
+
+## Technologies Used\n- GitHub\n- Markdown
+
+Feel free to explore the project and adapt it to your needs!

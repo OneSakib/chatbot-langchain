@@ -94,13 +94,17 @@ async def upload_pdf(session_id: str = Form(...), file: UploadFile = File(...)):
     return JSONResponse(status_code=200, content={'res': "PDF uploaded and processed successfully."})
 
 
-@app.post('/chat-pdf')
+@app.post('/chat-pdf', response_model=ChatResponse)
 async def chat_pdf(request: ChatRequest):
     pdf_vectors = [name.split('.')[0]
                    for name in os.listdir('./db/vectorstore')]
     if request.session_id not in pdf_vectors:
         raise HTTPException(
             status_code=400, detail="No PDF uploaded for this session.")
+    history = load_history(session_id=request.session_id)
+    formatted_history = format_history(history)
+    user_msg = {"role": "user", "content": request.message}
+    formatted_history.append(HumanMessage(content=request.message))
     vectorstore = load_vector(
         session_id=request.session_id, embeddings=embeddings)
     answer = "Answer not Found!"
@@ -112,4 +116,7 @@ async def chat_pdf(request: ChatRequest):
                 search_kwargs={"k": 3})
         )
         answer = qa_chain.run(request.message)
-    return JSONResponse(status_code=200, content={"res": answer})
+    bot_msg = {"role": "assistant", "content": answer}
+    history.extend([user_msg, bot_msg])
+    save_history(session_id=request.session_id, history=history)
+    return ChatResponse(session_id=request.session_id, response=str(answer), history=[Message(**msg) for msg in history])
